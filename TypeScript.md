@@ -282,11 +282,16 @@ console.log(circle.contains(somePoint))
 ```typescript
 // point.ts
 // export用于导出一个类，只有被导出的类才可以在其他文件中被导入
+//方式1
 export class Point{
 }
 export class A{
   
 }
+//方式2
+class Point{}
+class A{}
+export {Point,A}
 ```
 
 ```typescript
@@ -296,3 +301,70 @@ import {Point,A} from './point';
 ```
 
 **本质上  使用的是commonjs**
+
+### 七、访问修饰符
+
+| public  | 公有 的，能被外部访问的（默认值）                 |
+| ------- | --------------------------------- |
+| private | 私有的，被声明为私有的属性，不能在外部（声明该属性的类的外部）访问 |
+
+其他用法
+
+```typescript
+class Student{
+
+    // private name:string;
+    // private age:number;
+    // public score:number;
+    // private className:string;
+    // private schoolName:string;
+    // private subject:string;
+    // private garde:string;
+
+    // constructor(
+    //     name:string,
+    //     age:number,
+    //     score:number,
+    //     className:string,
+    //     schoolName:string,
+    //     subject:string,
+    //     garde:string
+    // )
+    // {
+    //     //this.xxx =xx 省略
+    // }
+
+    // 同时声明类的属性 以及 构造方法 并且在调用构造方法的时候，为属性赋值
+  	// 等同于上面注释的代码
+    constructor(
+        private name:string,
+        private age:number,
+        public score:number,
+        private className:string,
+        private schoolName:string,
+        private subject:string,
+        private garde:string
+    ){
+
+    }
+
+    test(){
+        console.log(this.name);
+    }
+
+}
+
+
+let s = new Student("nnn",22,99,'wbs','itany','前端','step2');
+s.test();
+```
+
+
+
+### 八、继承
+
+### 九、接口与实现
+
+### 十、装饰器
+
+### 十一、声明文件

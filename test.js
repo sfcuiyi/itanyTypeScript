@@ -39,3 +39,12 @@ function plus()
 
 }
 
+
+
+var obj = {
+    title:'aaa'
+}
+
+var title = 'aaaa';
+
+var obj2 = {title}
