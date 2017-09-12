@@ -48,3 +48,17 @@ var obj = {
 var title = 'aaaa';
 
 var obj2 = {title}
+
+
+
+
+function so()
+{
+    var arr  = [123,123,123,123,123,5,47,587789];
+
+    //arr.sort((a,b)=> a-b);
+
+    arr.sort();
+
+    console.log(arr)
+}
