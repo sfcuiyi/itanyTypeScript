@@ -30,5 +30,3 @@ var str = c.teach("旺叔:站长", "开车");
 console.log(str);
 c.test(7);
 console.log(Math.sqrt(2));
-// 定义 平面直角坐标系中的 点  这个类  提供方法 distance(x,y) 作用 计算当前点和参数对应的点的距离
-// 
