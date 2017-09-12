@@ -1,5 +1,6 @@
 // 定义 平面直角坐标系中的 点  这个类  提供方法 distance(x,y) 作用 计算当前点和参数对应的点的距离
-class Point{
+// export用于导出一个类，只有被导出的类才可以在其他文件中被导入
+export class Point{
 
     x:number;
     y:number;
@@ -32,5 +33,4 @@ let p2  =new Point(6,8);
 let distance : number = p.distance(p2);
 console.log(distance);
 
-
-// 定义 圆  Circle 类  提供方法 isInside 判断一个点 是否在圆内  是==> true
+export class A{}

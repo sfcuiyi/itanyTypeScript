@@ -153,6 +153,146 @@ let c2 = new Computer('Apple','8000','一体机');
 ```
 
 ```typescript
+// 在typeScript中 使用关键字 class 定义类
+// class 类名:类名首字母大写（规范 ） + 驼峰命名法
+class Computer{
+
+    //定义属性
+    //[访问修饰符] 属性名:类型 [=值]；
+    label:string;
+    price:number;
+    type:string = "笔记本";
+
+    //定义方法
+    //方法名(方法参数列表)[:返回值类型]{}
+    play(player:string):void{
+        console.log(`${player}正在玩电脑....`);
+    }
+
+    teach(teacher:string,subject:string):string{
+        return `${teacher}正在教${subject}.......`;
+    }
+
+
+    test(price:number)
+    {
+        console.log(price);
+        // 在类中  this 代表当前类的一个对象（实例），方法的调用者
+        console.log(this.price);
+    }
+}
+
+let c = new Computer();
+c.label = "Apple";
+c.price = 8000;
+console.log(c.price);
+let c1 = new Computer();
+c1.price = 90000;
+
+c.play("老王");
+let str = c.teach("旺叔:站长","开车");
+console.log(str);
+
+c.test(7);
+console.log(Math.sqrt(2))
+
 
 ```
 
+```typescript
+// 定义 平面直角坐标系中的 点  这个类  提供方法 distance(x,y) 作用 计算当前点和参数对应的点的距离
+class Point{
+
+    x:number;
+    y:number;
+
+    //在类中，有一个方法非常特别，叫做 构造方法，该方法方法名constructor
+    // 方法参数任意，没有 返回值类型
+    // 该方法会在new 一个对象的时候，自动调用
+    // 每一个类其实默认存在一个无参的构造方法,当显示的提供了有参构造后，默认的无参构造消失
+    constructor(x:number,y:number){
+        this.x = x;
+        this.y = y;
+    }
+
+
+    // distance(x:number,y:number):number{
+    //     return Math.sqrt( Math.pow( this.x - x ,2) + Math.pow( this.y - y , 2) );
+    // }
+
+    distance(dis:Point):number{
+        return Math.sqrt( Math.pow( this.x - dis.x ,2) + Math.pow( this.y - dis.y , 2) );
+    }
+
+}
+// let p = new Point();
+//p.x = 0;
+//p.y = 0;
+let p = new Point(0,0);
+let p2  =new Point(6,8);
+
+let distance : number = p.distance(p2);
+console.log(distance);
+
+
+// 定义 圆  Circle 类  提供方法 isInside 判断一个点 是否在圆内  是==> true
+class Circle {
+    //圆心
+    center:Point;
+    //半径
+    r:number;
+
+    constructor(center:Point,r:number)
+    {
+        this.center = center;
+        this.r = r;
+    }
+
+    contains(p:Point):boolean{
+        // if(this.center.distance(p) < this.r)
+        // {
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+
+        // if(this.center.distance(p) < this.r)
+        // {
+        //     return true;
+        // }
+        // return false;
+
+        // return this.center.distance(p) < this.r ? true : false;
+
+        return this.center.distance(p) < this.r;
+    }
+}
+
+let center = new Point(0,0);
+
+let somePoint = new Point(8,8);
+
+let circle = new Circle(center,4);
+
+console.log(circle.contains(somePoint))
+```
+
+### 六：模块的导入和导出
+
+```typescript
+// point.ts
+// export用于导出一个类，只有被导出的类才可以在其他文件中被导入
+export class Point{
+}
+export class A{
+  
+}
+```
+
+```typescript
+//other.ts
+//import 用于导入其他类（该类必须被导出），{}中可以写多个要导入的类，from后跟的是类所在文件名（不加后缀）
+import {Point,A} from './point';
+```
+
+**本质上  使用的是commonjs**

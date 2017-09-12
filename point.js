@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // 定义 平面直角坐标系中的 点  这个类  提供方法 distance(x,y) 作用 计算当前点和参数对应的点的距离
 var Point = /** @class */ (function () {
     //在类中，有一个方法非常特别，叫做 构造方法，该方法方法名constructor
@@ -16,6 +18,7 @@ var Point = /** @class */ (function () {
     };
     return Point;
 }());
+exports.Point = Point;
 // let p = new Point();
 //p.x = 0;
 //p.y = 0;
