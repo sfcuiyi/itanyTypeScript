@@ -32,3 +32,10 @@ console.log(typeof(u) == 'object');
 
 var arr = new Array(3,4);
 console.log(typeof(arr) == 'object');
+
+
+function plus()
+{
+
+}
+
