@@ -55,3 +55,5 @@ class PersonComparator implements Comparator{
 let com = new PersonComparator();
 s.sort(perArr,com);
 console.log(perArr[0].name,perArr[1].name,perArr[2].name);
+
+

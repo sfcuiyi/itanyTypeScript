@@ -449,7 +449,9 @@ class SomeInterfaceImpl implements SomeInterface,OtherInterface{
 }
 ```
 
+//  复习bootstrap常用类
 
+//  了解 MVC 和 MVVM
 
 ### 十、装饰器
 
